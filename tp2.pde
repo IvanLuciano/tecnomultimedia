@@ -74,7 +74,7 @@ text("Productoras:",px/2,py+height*3+height/20*3);     // SECUENCIA 5
 text("El Deseo, Underground Producciones, Telefe,",px/2,py+height*3+height/20*4);
 text("Instituto Nacional de Cine y Artes Audiovisuales, K&S Films.",px/2,py+height*3+height/20*5);
 
-image(imagen4,px*1.6,py+height*3+height/20*13);
+image(imagen4,px*1.6,py+height*3+height/20*13,width/1.7,height/1.7);
 
 
  textAlign(LEFT,CENTER);
