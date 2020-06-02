@@ -1,7 +1,7 @@
 PFont texto;
-PImage imagen1, imagen2, imagen3, imagen4, imagen5;
+PImage imagen1, imagen2, imagen3, imagen4, imagen5a, imagen5b ;
 float px, py;
-
+float efecto1x, efecto1y, efecto2x, efecto3x, efecto4x, efecto5ax, efecto5bx;
 void setup(){
 size(900,600);
 px= width/4; 
@@ -13,13 +13,21 @@ imagen1= loadImage("elangel01.jpg");
 imagen2= loadImage("elangel02.jpg");
 imagen3= loadImage("elangel03.jpg");
 imagen4= loadImage("elangel04.jpg");
-imagen5= loadImage("elangel05.jpg");
+imagen5a= loadImage("elangel05a.png");
+imagen5b= loadImage("elangel05b.png");
 noLoop();
+ efecto1x=width/1.7;
+ efecto1y=height/1.7;
+ efecto2x=width/4*2.3;
+ efecto3x=width/4*1.2;
+ efecto4x=width/5*4.2;
+ efecto5ax=width/4*3.1;
+ efecto5bx=width/4*0.9;
 }
 
 
 void draw(){
-background(40);
+background(25);
     textAlign(CENTER,TOP); // aclaracion para el profe (iniciar con click)
     textSize(height/30);
     fill(75);
@@ -30,8 +38,9 @@ fill(255,255,0);
  textSize(height/13);
  imageMode(CENTER);
  text("EL ÁNGEL",px*2,py); // SECUENCIA 1
- image(imagen1,px*2,py+height/2,width/1.7,height/1.7);
-
+image(imagen1,px*2,py+height/2,efecto1x,efecto1y);
+ efecto1x= efecto1x-px/640;
+ efecto1y= efecto1y-px/640;
  fill(255,225,0);
  textAlign(LEFT,CENTER);
 
@@ -49,8 +58,9 @@ text("Luis Gnecco, como Héctor Robledo Puch.",px/2,py+height+height/20*7);
 text("Cecilia Roth, como Aurora Robledo Puch.",px/2,py+height+height/20*8);
 text("Malena Villa, como Marisol / Magdalena.",px/2,py+height+height/20*9);
 
- image(imagen2,px*1.4,py+height+height/20*15,width/2.3,height/2.3);
-
+image(imagen2,efecto2x,py+height+height/20*15,width/2.3,height/2.3);
+ efecto2x= efecto2x -px/900;
+ 
  textAlign(RIGHT,CENTER);
  textSize(height/30); // SECUENCIA 4
  text("Director: Luis Ortega",px*3.5,py+height*2);
@@ -65,7 +75,8 @@ text("Hugo Sigma, Matías Mosteirín, Pablo Culell,",px*3.5,py+height*2+height/2
 text("Leticia Cristi, Axel Kuschevatzky, Micaela Buye, Javier Braier,",px*3.5,py+height*2+height/20*8);
 text("Pedro Almodóvar, Agustín Almodóvar, Esther García Rodríguez.",px*3.5,py+height*2+height/20*9);
 
- image(imagen3,px*2.6,py+height*2+height/20*16,width/2.3,height/2.3);
+ image(imagen3,efecto3x,py+height*2+height/20*16,width/2.3,height/2.3);
+ efecto3x= efecto3x +px/900;
  
  textAlign(LEFT,CENTER);
  textSize(height/20); 
@@ -74,8 +85,8 @@ text("Productoras:",px/2,py+height*3+height/20*3);     // SECUENCIA 5
 text("El Deseo, Underground Producciones, Telefe,",px/2,py+height*3+height/20*4);
 text("Instituto Nacional de Cine y Artes Audiovisuales, K&S Films.",px/2,py+height*3+height/20*5);
 
-image(imagen4,px*1.6,py+height*3+height/20*13,width/1.7,height/1.7);
-
+image(imagen4,efecto4x,py+height*3+height/20*13,width/1.7,height/1.7);
+ efecto4x= efecto4x -px/900;
 
  textAlign(LEFT,CENTER);
  textSize(height/20);
@@ -94,14 +105,22 @@ text("Mi tristeza es mía y nada más, por Leonardo Favio.",px/2,py+height*4+hei
 text("Single Foot, por Moondog.",px/2,py+height*4+height/20*12);
 text("La casa del sol naciente, por Palito Ortega.",px/2,py+height*4+height/20*13);
 text("Milonga del ángel, por Ástor Piazzolla.",px/2,py+height*4+height/20*14);
+ textAlign(CENTER,CENTER);
+ textSize(height/7);
+ text("FIN.",px*2,py+height*4.35+height/20*15);
 
- image(imagen5,px*2,py+height*5+height/20*2,width/1.5,height/1.5);
+ imageMode(CENTER);
+ image(imagen5a,efecto5ax,py+height*5+height/20*2,320,height/1.5);
+ efecto5ax = efecto5ax -px/1020;
+ 
+ 
+ imageMode(CENTER);
+ image(imagen5b,efecto5bx,py+height*5+height/20*2,320,height/1.5);
+  efecto5bx = efecto5bx +px/1020;
  
  textAlign(CENTER,CENTER);
  textSize(height/7);
-text("FIN.",px*2,py+height*5+height/20*15);
 }
-
 void mousePressed(){
 loop();
 }
