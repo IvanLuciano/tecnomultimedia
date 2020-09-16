@@ -113,13 +113,14 @@ void Desenlace() {
     }
   }
   if (contador == 11000) {
-    background(75); //PANTALLA Creditos 1.1000
+    tint(60);
+    image(fotos[0], width/2, height/2, 800, 600); //PANTALLA Creditos 1.1000
 
     textAlign(LEFT, TOP);
     textSize(33);
-    fill(0);
+    fill(225);
     text("Alumno: Ivan Luciano.\nLegajo: 85085/6.\nComisión: 1 -8:00AM\nProfesor: José Luis Bugiolachi.\n", 5, height/13); 
-    text("Trabajo practico n°3 TecnoMultimedia 1.  2020", 0, 300); 
+    text("Trabajo practico n°4 TecnoMultimedia 1.  2020", 0, 300); 
 
     fill(170, 30, 30);
     rect(300, 350, 500, 400);
