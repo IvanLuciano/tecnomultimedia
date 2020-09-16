@@ -1,7 +1,7 @@
 void Inicio() {
   if (contador == 0) { // PRESENTACIO
     background(80);
-
+    tint(255);
     textAlign(CENTER, TOP);
     textSize(55);
     fill(255, 80, 80);
