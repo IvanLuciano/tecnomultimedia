@@ -3,7 +3,8 @@ float barracd, cd;
 PFont texto;
 PImage [] fotos = new PImage[22];
 void setup() {
-  size(400, 300);
+  size(800, 600);
+  surface.setResizable(true);
   contador= 0;
   cd=33;
   texto= loadFont("MinionPro-Bold-48.vlw");
@@ -56,7 +57,7 @@ void draw() { //animacion
   noStroke();
 
   /*°°°°°°°°°°°°°°°°°°°°°   COOLDOWN DE LOS BOTONES   °°°°°°°°°°°°°°°°°°°°°*/
-  if (contador >= 1) {
+  if (contador >= 0) {
     if (cd<=30&&cd>=0) {
       cd = cd -0.28;
       barracd = map(cd, 30, 0, width/2.66, width/1.606);
@@ -67,7 +68,7 @@ void draw() { //animacion
 
       textSize(height*0.025);
       fill(barracd/21, barracd, barracd/12);
-      text("¡Click disponible!", width/2, height*0.008);
+      text("Cargando..", width/2, height*0.008);
     } else {
 
       cd=33;
@@ -76,7 +77,7 @@ void draw() { //animacion
         rect(width/2.66, 0, width*0.625, height*0.041);
         fill(0);
 
-        text("¡Click disponible!", width/2, height*0.008);
+        text("¡Haz click!", width/2, height*0.008);
       }
     }
   }
@@ -90,7 +91,11 @@ void draw() { //animacion
   /*°°°°°°°°°°°°°°°°°°°°°*/  println("pantallaN°: "+contador+"  |  cooldown: "+cd);      /*°°°°°°°°°°°°°°°°°°°°°*/
 
   /*°°°°°°°°°°°°°°°°°°°°°*/  println("     mX-->"+mouseX+"  |  mY-->"+mouseY);          /*°°°°°°°°°°°°°°°°°°°°°*/
+  if (contador == 0 ) {
+loop();
+  }
 }
+
 
 
 
