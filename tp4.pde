@@ -3,7 +3,7 @@ float barracd, cd;
 PFont texto;
 PImage [] fotos = new PImage[22];
 void setup() {
-  size(800, 600);
+  size(400, 300);
   contador= 0;
   cd=33;
   texto= loadFont("MinionPro-Bold-48.vlw");
@@ -59,23 +59,25 @@ void draw() { //animacion
   if (contador >= 1) {
     if (cd<=30&&cd>=0) {
       cd = cd -0.28;
-      barracd = map(cd, 30, 0, 300, 498);
-      
-     
-      fill(50, barracd/2.2, 50);
-      rect(300, 0, barracd, 25);
+      barracd = map(cd, 30, 0, width/2.66, width/1.606);
 
-      textSize(15);
+
+      fill(50, barracd/2.2, 50);
+      rect(width/2.66, 0, barracd, height*0.041);
+
+      textSize(height*0.025);
       fill(barracd/21, barracd, barracd/12);
-      text("¡Click disponible!", 400, 5);
+      text("¡Click disponible!", width/2, height*0.008);
     } else {
 
       cd=33;
-      fill(50, 255, 50);
-      rect(300, 0, 500, 25);
-      fill(0);
+      if (cd==33) {
+        fill(50, 255, 50);
+        rect(width/2.66, 0, width*0.625, height*0.041);
+        fill(0);
 
-      text("¡Click disponible!", 400, 5);
+        text("¡Click disponible!", width/2, height*0.008);
+      }
     }
   }
   /* 
